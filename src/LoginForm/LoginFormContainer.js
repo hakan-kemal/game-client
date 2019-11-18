@@ -18,14 +18,23 @@ class LoginFormContainer extends React.Component {
   };
 
   render() {
-    return (
-      <LoginForm
-        onSubmit={this.onSubmit}
-        onChange={this.onChange}
-        values={this.state}
-      />
-    );
+    const authToken = this.props.authToken;
+    if (authToken) {
+      return <div> you are logged in! </div>;
+    } else {
+      return (
+        <LoginForm
+          onSubmit={this.onSubmit}
+          onChange={this.onChange}
+          values={this.state}
+        />
+      );
+    }
   }
 }
 
-export default connect(null, { login })(LoginFormContainer);
+function mapStateToProps(state) {
+  return { authToken: state.login };
+}
+
+export default connect(mapStateToProps, { login })(LoginFormContainer);
