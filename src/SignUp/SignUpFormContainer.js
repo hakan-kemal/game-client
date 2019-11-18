@@ -1,22 +1,22 @@
 import React from "react";
-import LoginForm from "./LoginForm";
+import SignUpForm from "./SignUpForm";
 import { connect } from "react-redux";
-import { login } from "../actions";
+import { signup } from "../actions";
 
-class LoginFormContainer extends React.Component {
+class SignUpFormContainer extends React.Component {
   state = { userName: "", password: "" };
 
   // *****LOGIN*****
+  //   onSubmit = event => {
+  //     event.preventDefault();
+  //     this.props.login(this.state.userName, this.state.password);
+  //   };
+
+  // *****SIGNUP*****
   onSubmit = event => {
     event.preventDefault();
-    this.props.login(this.state.userName, this.state.password);
+    this.props.signup(this.state.userName, this.state.password);
   };
-
-  // // *****SIGNUP*****
-  // onSubmit = event => {
-  //   event.preventDefault();
-  //   this.props.signup(this.state.userName, this.state.password);
-  // };
 
   onChange = event => {
     this.setState({
@@ -25,12 +25,15 @@ class LoginFormContainer extends React.Component {
   };
 
   render() {
+    const checkSignUp = this.props.checkSignUp;
     const authToken = this.props.authToken;
     if (authToken) {
-      return <div> you are logged in! </div>;
+      return <div> hello </div>;
+    } else if (checkSignUp) {
+      return <div>You signed up!</div>;
     } else {
       return (
-        <LoginForm
+        <SignUpForm
           onSubmit={this.onSubmit}
           onChange={this.onChange}
           values={this.state}
@@ -44,4 +47,4 @@ function mapStateToProps(state) {
   return { checkSignUp: state.signup, authToken: state.login };
 }
 
-export default connect(mapStateToProps, { login })(LoginFormContainer);
+export default connect(mapStateToProps, { signup })(SignUpFormContainer);

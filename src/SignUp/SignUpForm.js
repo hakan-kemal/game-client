@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function LoginForm(props) {
+export default function SignUpForm(props) {
   const { onSubmit, onChange, values } = props;
   const { userName, password } = values;
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Username:</label>
+      <label>Create username:</label>
       <input
         type="userName"
         name="userName"
@@ -14,7 +14,7 @@ export default function LoginForm(props) {
         onChange={onChange}
         placeholder="userName"
       />
-      <label>Password</label>
+      <label>Create password</label>
       <input
         type="password"
         name="password"
@@ -22,9 +22,7 @@ export default function LoginForm(props) {
         onChange={onChange}
         placeholder="password"
       />
-      <button type="submit" name="action" value="login">
-        Login
-      </button>
+      <button type="submit">SignUp</button>
     </form>
   );
 }
