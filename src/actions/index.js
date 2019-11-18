@@ -11,10 +11,10 @@ function jwt(payload) {
   };
 }
 
-export const login = (email, password) => dispatch => {
+export const login = (userName, password) => dispatch => {
   superagent
     .post(`${baseUrl}/login`)
-    .send({ email, password })
+    .send({ userName, password })
     .then(response => {
       const action = jwt(response.body.jwt);
 

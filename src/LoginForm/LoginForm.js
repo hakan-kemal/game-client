@@ -2,17 +2,19 @@ import React from "react";
 
 export default function LoginForm(props) {
   const { onSubmit, onChange, values } = props;
-  const { email, password } = values;
+  const { userName, password } = values;
 
   return (
     <form onSubmit={onSubmit}>
+      <label>Username:</label>
       <input
-        type="email"
-        name="email"
-        value={email}
+        type="userName"
+        name="userName"
+        value={userName}
         onChange={onChange}
-        placeholder="email"
+        placeholder="userName"
       />
+      <label>Password</label>
       <input
         type="password"
         name="password"
@@ -20,7 +22,8 @@ export default function LoginForm(props) {
         onChange={onChange}
         placeholder="password"
       />
-      <button type="submit">Submit</button>
+      <button type="submit">Login</button>
+      <button type="submit">SignUp</button>
     </form>
   );
 }
