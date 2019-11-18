@@ -1,22 +1,22 @@
 import React from "react";
 
-export default function CreateForm(props) {
+export default function LoginForm(props) {
   const { onSubmit, onChange, values } = props;
-  const { title, url } = values;
+  const { email, password } = values;
 
   return (
     <form onSubmit={onSubmit}>
       <input
-        type="text"
-        name="title"
-        value={title}
+        type="email"
+        name="email"
+        value={email}
         onChange={onChange}
-        placeholder="Username"
+        placeholder="email"
       />
       <input
-        type="text"
-        name="url"
-        value={url}
+        type="password"
+        name="password"
+        value={password}
         onChange={onChange}
         placeholder="password"
       />
