@@ -22,8 +22,17 @@ export default function LoginForm(props) {
         onChange={onChange}
         placeholder="password"
       />
-      <button type="submit">Login</button>
-      <button type="submit">SignUp</button>
+      <button type="submit" name="action" value="login">
+        Login
+      </button>
+      {/* <button
+        onSubmitSignUp={onSubmitSignUp}
+        type="submit"
+        name="action"
+        value="delete"
+      >
+        SignUp
+      </button> */}
     </form>
   );
 }

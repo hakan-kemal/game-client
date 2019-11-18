@@ -2,14 +2,22 @@ import React from "react";
 import LoginForm from "./LoginForm";
 import { connect } from "react-redux";
 import { login } from "../actions";
+import { signup } from "../actions";
 
 class LoginFormContainer extends React.Component {
   state = { userName: "", password: "" };
 
+  // *****LOGIN*****
   onSubmit = event => {
     event.preventDefault();
     this.props.login(this.state.userName, this.state.password);
   };
+
+  // // *****SIGNUP*****
+  // onSubmit = event => {
+  //   event.preventDefault();
+  //   this.props.signup(this.state.userName, this.state.password);
+  // };
 
   onChange = event => {
     this.setState({
@@ -37,4 +45,4 @@ function mapStateToProps(state) {
   return { authToken: state.login };
 }
 
-export default connect(mapStateToProps, { login })(LoginFormContainer);
+export default connect(mapStateToProps, { login, signup })(LoginFormContainer);
