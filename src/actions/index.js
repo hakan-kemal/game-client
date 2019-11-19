@@ -5,6 +5,14 @@ const baseUrl = "http://localhost:4000";
 export const JWT = "JWT";
 export const NEW_USER = "NEW_USER";
 export const GET_ROOMS = "GET_ROOMS";
+export const ADD_ICON = "ADD_POSTICO";
+
+export function addIcon(payload) {
+  return {
+    type: ADD_ICON,
+    payload
+  };
+}
 
 function jwt(payload) {
   return {
