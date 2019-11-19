@@ -4,6 +4,7 @@ const baseUrl = "http://localhost:4000";
 
 export const JWT = "JWT";
 export const NEW_USER = "NEW_USER";
+export const GET_ROOMS = "GET_ROOMS";
 
 function jwt(payload) {
   return {
