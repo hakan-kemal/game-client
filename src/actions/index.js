@@ -10,7 +10,7 @@ export const ADD_ICON = "ADD_POSTICO";
 export function addIcon(payload) {
   return {
     type: ADD_ICON,
-    payload
+    payload: { title: "postico" }
   };
 }
 

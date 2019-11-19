@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import superagent from "superagent";
-import { Link } from "react-router-dom";
 import { url } from "../url";
 import GameLobby from "./GameLobby";
 import { Container, Row } from "react-bootstrap";
