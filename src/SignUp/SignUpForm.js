@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 
 export default function SignUpForm(props) {
   const { onSubmit, onChange, values } = props;
@@ -22,7 +23,9 @@ export default function SignUpForm(props) {
         onChange={onChange}
         placeholder="password"
       />
-      <button type="submit">SignUp</button>
+      <Button variant="outline-success" type="submit">
+        SignUp
+      </Button>
     </form>
   );
 }

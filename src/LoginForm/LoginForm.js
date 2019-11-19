@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 
 export default function LoginForm(props) {
   const { onSubmit, onChange, values } = props;
@@ -22,9 +23,14 @@ export default function LoginForm(props) {
         onChange={onChange}
         placeholder="password"
       />
-      <button type="submit" name="action" value="login">
+      <Button
+        variant="outline-primary"
+        type="submit"
+        name="action"
+        value="login"
+      >
         Login
-      </button>
+      </Button>
     </form>
   );
 }
