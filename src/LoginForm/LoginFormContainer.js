@@ -22,22 +22,22 @@ class LoginFormContainer extends React.Component {
   render() {
     const checkSignUp = this.props.checkSignUp;
     const authToken = this.props.authToken;
-    if (authToken || checkSignUp) {
-      return (
-        <div>
-          <h6>Login successful!</h6>
-          <p>
-            Continue to <Link to={`/room`}>MainLobby</Link>
-          </p>
-        </div>
-      );
-    } else {
+    if (!authToken && checkSignUp) {
       return (
         <LoginForm
           onSubmit={this.onSubmit}
           onChange={this.onChange}
           values={this.state}
         />
+      );
+    } else {
+      return (
+        <div>
+          <h6>Login successful!</h6>
+          <div>
+            Continue to <Link to={`/room`}>MainLobby</Link>
+          </div>
+        </div>
       );
     }
   }

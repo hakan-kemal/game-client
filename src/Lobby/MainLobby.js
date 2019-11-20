@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { url } from "../url";
 // import { connect } from "react-redux";
 // import GameLobby from "./GameLobby";
-import superagent from "superagent";
 // import { Container, Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import superagent from "superagent";
