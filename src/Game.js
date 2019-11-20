@@ -63,7 +63,7 @@ export default class Game extends Component {
   render() {
     return (
       <div id="body">
-        <h1>Game</h1>
+        <h1>Web Technologies</h1>
         <div className="square-container">
           <TogglePostico
             isOpen={this.shouldBeOpen("postico1")}
