@@ -4,9 +4,13 @@ import LoginFormContainer from "./LoginForm/LoginFormContainer";
 import SignUpFormContainer from "./SignUp/SignUpFormContainer";
 // import UserFormContainer from "./SignUp/UserFormContainer";
 import MainLobby from "./Lobby/MainLobby";
-// import GameLobby from "./Lobby/GameLobby";
+import Game from "./Game";
+import "./App.css";
 import { connect } from "react-redux";
 import { url } from "./url";
+=======
+// import GameLobby from "./Lobby/GameLobby";
+
 // import { GET_ROOMS } from "./actions";
 // import Room from "./Lobby/Room";
 
@@ -44,6 +48,7 @@ class App extends React.Component {
         <MainLobby rooms={this.props.rooms} />
         {/* <Route path="/room/" component={MainLobby} />
         <Route path="/room/:roomName" component={GameLobby} /> */}
+       <Game />
       </Fragment>
     );
   }

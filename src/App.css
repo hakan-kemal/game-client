@@ -1,0 +1,37 @@
+body {
+  background: #a5b5c5;
+  background: lightblue !important;
+}
+
+.square-container {
+  margin: auto;
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+  grid-gap: 5px;
+}
+
+.square {
+  background: cadetblue;
+  padding-top: 100%; /* padding trick directly on the grid item */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.squareInvisible {
+  visibility: hidden;
+}
+
+.codeImage {
+  height: 70px;
+}
+
+.square .content {
+  /* absolutely positioned */
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
