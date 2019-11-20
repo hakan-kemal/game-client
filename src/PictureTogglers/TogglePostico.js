@@ -27,7 +27,7 @@ class TogglePostico extends Component {
           <img
             alt="postico"
             src="https://static.macupdate.com/products/53411/l/postico-logo.png?v=1570548229"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

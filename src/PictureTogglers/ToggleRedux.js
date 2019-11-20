@@ -27,7 +27,7 @@ class ToggleRedux extends Component {
           <img
             alt="redux"
             src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/386/square_256/redux.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

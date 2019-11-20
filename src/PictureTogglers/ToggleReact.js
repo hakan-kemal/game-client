@@ -27,7 +27,7 @@ class ToggleReact extends Component {
           <img
             alt="react"
             src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/026/square_256/react.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

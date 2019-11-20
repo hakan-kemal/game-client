@@ -27,7 +27,7 @@ class ToggleGraphQL extends Component {
           <img
             alt="graphql"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/128px-GraphQL_Logo.svg.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

@@ -27,7 +27,7 @@ class ToggleCSS extends Component {
           <img
             alt="css"
             src="http://www.freesite.wakeupict.com/wp-content/uploads/css3-256.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

@@ -4,6 +4,7 @@ import GameLobby from "./GameLobby";
 import superagent from "superagent";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import superagent from "superagent";
 
 export default class MainLobby extends Component {
   state = {

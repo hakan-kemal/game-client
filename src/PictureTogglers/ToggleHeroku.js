@@ -27,7 +27,7 @@ class ToggleHeroku extends Component {
           <img
             alt="heroku"
             src="https://ivangabriele.gallerycdn.vsassets.io/extensions/ivangabriele/vscode-heroku/1.4.3/1563906575407/Microsoft.VisualStudio.Services.Icons.Default"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

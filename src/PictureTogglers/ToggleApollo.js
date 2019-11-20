@@ -27,7 +27,7 @@ class ToggleApollo extends Component {
           <img
             alt="apollo"
             src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/231/square_256/EGH_Apollo-GraphQL-React_Final.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );
