@@ -69,7 +69,6 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("postico1")}
             onClick={() => this.onClick("postico1")}
           />
-
           <ToggleHTML
             isOpen={this.shouldBeOpen("html1")}
             onClick={() => this.onClick("html1")}
@@ -106,7 +105,6 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("angular1")}
             onClick={() => this.onClick("angular1")}
           />
-
           <ToggleApollo
             isOpen={this.shouldBeOpen("apollo1")}
             onClick={() => this.onClick("apollo1")}
@@ -132,12 +130,10 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("docker1")}
             onClick={() => this.onClick("docker1")}
           />
-
           <ToggleTypescript
             isOpen={this.shouldBeOpen("typescript1")}
             onClick={() => this.onClick("typescript1")}
           />
-
           <ToggleReact
             isOpen={this.shouldBeOpen("react2")}
             onClick={() => this.onClick("react2")}
@@ -146,12 +142,10 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("js1")}
             onClick={() => this.onClick("js1")}
           />
-
           <ToggleVScode
             isOpen={this.shouldBeOpen("vscode2")}
             onClick={() => this.onClick("vscode2")}
           />
-
           <ToggleGithub
             isOpen={this.shouldBeOpen("github2")}
             onClick={() => this.onClick("github2")}
@@ -164,12 +158,10 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("codaisseur2")}
             onClick={() => this.onClick("codaisseur2")}
           />
-
           <ToggleHeroku
             isOpen={this.shouldBeOpen("heroku1")}
             onClick={() => this.onClick("heroku1")}
           />
-
           <ToggleHTML
             isOpen={this.shouldBeOpen("html2")}
             onClick={() => this.onClick("html2")}
@@ -178,7 +170,6 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("slack1")}
             onClick={() => this.onClick("slack1")}
           />
-
           <ToggleJS
             isOpen={this.shouldBeOpen("js2")}
             onClick={() => this.onClick("js2")}
@@ -191,12 +182,10 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("nodejs1")}
             onClick={() => this.onClick("nodejs1")}
           />
-
           <TogglePostgresQl
             isOpen={this.shouldBeOpen("postgresql2")}
             onClick={() => this.onClick("postgresql2")}
           />
-
           <ToggleRedux
             isOpen={this.shouldBeOpen("redux2")}
             onClick={() => this.onClick("redux2")}
@@ -209,7 +198,6 @@ export default class Game extends Component {
             isOpen={this.shouldBeOpen("typescript2")}
             onClick={() => this.onClick("typescript2")}
           />
-
           <ToggleSlack
             isOpen={this.shouldBeOpen("slack2")}
             onClick={() => this.onClick("slack2")}
