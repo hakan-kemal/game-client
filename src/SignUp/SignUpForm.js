@@ -7,21 +7,21 @@ export default function SignUpForm(props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Create username:</label>
+      <label>Username:</label>
       <input
         type="userName"
         name="userName"
         value={userName}
         onChange={onChange}
-        placeholder="userName"
+        placeholder="Create username"
       />
-      <label>Create password</label>
+      <label>Password</label>
       <input
         type="password"
         name="password"
         value={password}
         onChange={onChange}
-        placeholder="password"
+        placeholder="Create password"
       />
       <Button variant="outline-success" type="submit">
         SignUp
