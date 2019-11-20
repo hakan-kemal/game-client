@@ -41,9 +41,7 @@ class SignUpFormContainer extends React.Component {
         <div>
           <h6>You've signed up!</h6>
           <h6>Please login:</h6>
-          <p>
-            <Route path="/" component={LoginFormContainer} exact />
-          </p>
+          <Route path="/" component={LoginFormContainer} exact />
         </div>
       );
     } else {
