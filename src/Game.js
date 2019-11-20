@@ -32,9 +32,7 @@ export default class Game extends Component {
       return;
     } else {
       const slicedName = name.slice(0, -1);
-      console.log(slicedName);
       const sameImage = clicked.includes(slicedName);
-      console.log(sameImage);
       if (sameImage) {
         this.setState({
           cleared: [...cleared, name, clicked],
@@ -52,7 +50,6 @@ export default class Game extends Component {
           });
         }, 1000);
       }
-      console.log("clicked!");
     }
   };
 
