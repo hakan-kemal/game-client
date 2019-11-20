@@ -1,26 +1,25 @@
 import React, { Component } from "react";
 
 class TogglePostico extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      opened: false
-    };
-    this.toggleBox = this.toggleBox.bind(this);
-  }
+  // constructor(props) {
+  // super(props);
+  // this.state = {
+  //  opened: false
+  // };
+  // this.toggleBox = this.toggleBox.bind(this);
+  // }
 
-  toggleBox() {
-    const { opened } = this.state;
-    this.setState({
-      opened: !opened
-    });
-  }
+  // toggleBox() {
+  // const { opened } = this.state;
+  // this.setState({
+  // opened: !opened
+  // });
+  // }
 
   render() {
-    const opened = this.state.opened;
-
-    if (!opened) {
-      return <div className="square" onClick={this.toggleBox}></div>;
+    const { isOpen } = this.props;
+    if (!isOpen) {
+      return <div onClick={this.props.onClick} className="square"></div>;
     } else {
       return (
         <div>

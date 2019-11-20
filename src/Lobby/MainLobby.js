@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { url } from "../url";
-// import { connect } from "react-redux";
-// import GameLobby from "./GameLobby";
-// import { Container, Col, Row } from "react-bootstrap";
+import GameLobby from "./GameLobby";
+import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import superagent from "superagent";
 
@@ -69,14 +68,3 @@ export default class MainLobby extends Component {
     );
   }
 }
-
-// <Container>
-//   <Row>
-// </Row>
-// <Col>
-//   <Row>
-// </Row>
-// <Row>
-//     </Row>
-//   </Col>
-// </Container>
