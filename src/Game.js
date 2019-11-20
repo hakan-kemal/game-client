@@ -19,119 +19,59 @@ import ToggleTypescript from "./PictureTogglers/ToggleTypescript";
 import ToggleVScode from "./PictureTogglers/ToggleVScode";
 
 export default class MainLobby extends Component {
+  state = {
+    clicked: [],
+    opened: {
+      postico1: false,
+      postico2: false
+    }
+  };
+  onClick(name) {}
   render() {
     return (
       <div id="body">
         <h1>Game</h1>
         <div className="square-container">
-          <TogglePostico>
-            <div className="square"></div>
-          </TogglePostico>
-          <TogglePostico>
-            <div className="square"></div>
-          </TogglePostico>
-          <ToggleReact>
-            <div className="square"></div>
-          </ToggleReact>
-          <ToggleReact>
-            <div className="square"></div>
-          </ToggleReact>
-          <ToggleCSS>
-            <div className="square"></div>
-          </ToggleCSS>
-          <ToggleCSS>
-            <div className="square"></div>
-          </ToggleCSS>
-          <ToggleAngular>
-            <div class="square"></div>
-          </ToggleAngular>
-          <ToggleAngular>
-            <div class="square"></div>
-          </ToggleAngular>
-          <ToggleApollo>
-            <div class="square"></div>
-          </ToggleApollo>
-          <ToggleApollo>
-            <div class="square"></div>
-          </ToggleApollo>
-          <ToggleCodaisseur>
-            <div class="square"></div>
-          </ToggleCodaisseur>
-          <ToggleCodaisseur>
-            <div class="square"></div>
-          </ToggleCodaisseur>
-          <ToggleDocker>
-            <div class="square"></div>
-          </ToggleDocker>
-          <ToggleDocker>
-            <div class="square"></div>
-          </ToggleDocker>
-          <ToggleTypescript>
-            <div class="square"></div>
-          </ToggleTypescript>
-          <ToggleVScode>
-            <div class="square"></div>
-          </ToggleVScode>
-          <ToggleGithub>
-            <div class="square"></div>
-          </ToggleGithub>
-          <ToggleGithub>
-            <div class="square"></div>
-          </ToggleGithub>
-          <ToggleGraphQL>
-            <div class="square"></div>
-          </ToggleGraphQL>
-          <ToggleGraphQL>
-            <div class="square"></div>
-          </ToggleGraphQL>
-          <ToggleHeroku>
-            <div class="square"></div>
-          </ToggleHeroku>
-          <ToggleHeroku>
-            <div class="square"></div>
-          </ToggleHeroku>
-          <ToggleHTML>
-            <div class="square"></div>
-          </ToggleHTML>
-          <ToggleHTML>
-            <div class="square"></div>
-          </ToggleHTML>
-          <ToggleJS>
-            <div class="square"></div>
-          </ToggleJS>
-          <ToggleJS>
-            <div class="square"></div>
-          </ToggleJS>
-          <ToggleNodejs>
-            <div class="square"></div>
-          </ToggleNodejs>
-          <ToggleNodejs>
-            <div class="square"></div>
-          </ToggleNodejs>
-          <TogglePostgresQl>
-            <div class="square"></div>
-          </TogglePostgresQl>
-          <TogglePostgresQl>
-            <div class="square"></div>
-          </TogglePostgresQl>
-          <ToggleRedux>
-            <div class="square"></div>
-          </ToggleRedux>
-          <ToggleRedux>
-            <div class="square"></div>
-          </ToggleRedux>
-          <ToggleSlack>
-            <div class="square"></div>
-          </ToggleSlack>
-          <ToggleSlack>
-            <div class="square"></div>
-          </ToggleSlack>
-          <ToggleTypescript>
-            <div class="square"></div>
-          </ToggleTypescript>
-          <ToggleVScode>
-            <div class="square"></div>
-          </ToggleVScode>
+          <TogglePostico onClick={() => this.onClick("postico")} />
+          <TogglePostico />
+          <ToggleReact />
+          <ToggleReact />
+          <ToggleCSS />
+          <ToggleCSS />
+          <ToggleAngular />
+          <ToggleAngular />
+          <ToggleApollo />
+          <ToggleApollo />
+          <ToggleCodaisseur />
+          <ToggleCodaisseur />
+          <ToggleDocker />
+          <ToggleDocker />
+          <ToggleTypescript />
+          <ToggleTypescript />
+          <ToggleVScode />
+          <ToggleVScode />
+          <ToggleGithub />
+          <ToggleGithub />
+          <ToggleGraphQL />
+          <ToggleGraphQL />
+          <ToggleHeroku />
+          <ToggleHeroku />
+          <ToggleHTML />
+          <ToggleHTML />
+          <ToggleJS />
+          <ToggleJS />
+          <ToggleNodejs />
+          <ToggleNodejs />
+          <TogglePostgresQl />
+          <TogglePostgresQl />
+          <ToggleRedux />
+          <ToggleRedux />
+          <ToggleSlack />
+          <ToggleSlack />
+          <ToggleTypescript />
+          <ToggleTypescript />
+          <ToggleVScode />
+          <ToggleVScode />
         </div>
         <br></br>
         <br></br>
