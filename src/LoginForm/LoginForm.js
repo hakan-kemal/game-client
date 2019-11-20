@@ -13,7 +13,7 @@ export default function LoginForm(props) {
         name="userName"
         value={userName}
         onChange={onChange}
-        placeholder="userName"
+        placeholder="Enter username"
       />
       <label>Password</label>
       <input
@@ -21,7 +21,7 @@ export default function LoginForm(props) {
         name="password"
         value={password}
         onChange={onChange}
-        placeholder="password"
+        placeholder="Enter password"
       />
       <Button
         variant="outline-primary"

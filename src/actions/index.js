@@ -42,3 +42,18 @@ export const signup = (userName, password) => dispatch => {
       dispatch(action);
     });
 };
+
+// function getRooms(payload) {
+//   return {
+//     type: GET_ROOMS,
+//     payload
+//   };
+// }
+
+// export const allRooms = () => dispatch => {
+//   superagent.get(`${baseUrl}/room`).then(response => {
+//     const action = getRooms(response.body);
+
+//     dispatch(action);
+//   });
+// };
