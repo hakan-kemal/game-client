@@ -2,15 +2,10 @@ import React from "react";
 import SignUpForm from "./SignUpForm";
 import { connect } from "react-redux";
 import { signup } from "../actions";
+import { Link } from "react-router-dom";
 
 class SignUpFormContainer extends React.Component {
   state = { userName: "", password: "" };
-
-  // *****LOGIN*****
-  //   onSubmit = event => {
-  //     event.preventDefault();
-  //     this.props.login(this.state.userName, this.state.password);
-  //   };
 
   // *****SIGNUP*****
   onSubmit = event => {
@@ -28,9 +23,16 @@ class SignUpFormContainer extends React.Component {
     const checkSignUp = this.props.checkSignUp;
     const authToken = this.props.authToken;
     if (authToken) {
-      return <div> hello </div>;
+      return <div></div>;
     } else if (checkSignUp) {
-      return <div>You signed up!</div>;
+      return (
+        <div>
+          <h6>You've signed up!</h6>
+          <p>
+            Please continue to the <Link to={`/room`}>MainLobby</Link>
+          </p>
+        </div>
+      );
     } else {
       return (
         <SignUpForm

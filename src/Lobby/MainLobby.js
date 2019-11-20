@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { url } from "../url";
-import GameLobby from "./GameLobby";
+// import { connect } from "react-redux";
+// import GameLobby from "./GameLobby";
 import superagent from "superagent";
-import { Container, Row } from "react-bootstrap";
+// import { Container, Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import superagent from "superagent";
 
@@ -22,7 +24,7 @@ export default class MainLobby extends Component {
   };
 
   onSubmit = event => {
-    console.log("SUBMIT");
+    console.log("SUBMIT BUTTON");
     event.preventDefault();
     const { value } = this.state;
     console.log({ roomName: value });
@@ -38,53 +40,44 @@ export default class MainLobby extends Component {
 
   render() {
     const { rooms } = this.props;
+    // if (!rooms) {
+    //   return null;
+    // } else {
     return (
-      <Container>
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.onChange}
+          />
+
+          <Button type="button" variant="outline-danger" onClick={this.reset}>
+            Reset
+          </Button>
+          <Button type="submit" variant="outline-primary">
+            Submit
+          </Button>
+        </form>
         <h2>MainLobby</h2>
-        <p>There are {rooms.length} game lobbies available.</p>
-        {rooms.map((room, index) => (
-          <h6 key={index}>
-            {/* <Link to={`/room/${room.name}`}>{room.name}</Link> */}
-            <GameLobby name={room.name} />
+        <p>There are currently {rooms.length} game lobbies available.</p>
+        {rooms.map(room => (
+          <h6 key={room.name}>
+            <Link to={`/room/${room.name}`}>{room.name}</Link>
           </h6>
         ))}
-        <Row>
-          <form onSubmit={this.onSubmit}>
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.onChange}
-            />
-
-            <Button variant="outline-danger" type="button" onClick={this.reset}>
-              Reset
-            </Button>
-            <Button type="submit" variant="outline-danger">
-              Submit
-            </Button>
-          </form>
-        </Row>
-      </Container>
+      </div>
     );
   }
 }
 
-// import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-
-// export default class Room extends Component {
-//   render() {
-//     const { rooms } = this.props;
-//     return (
-//       <div>
-//         <h2>Main Lobby</h2>
-// <p>There are {rooms.length} game lobbies available.</p>
-// {rooms.map((room, index) => (
-//   <h6 key={index}>
-//     <Link to={`/room/${room.name}`}>{room.name}</Link>
-//   </h6>
-// ))}
-//       </div>
-//     );
-//   }
-// }
+// <Container>
+//   <Row>
+// </Row>
+// <Col>
+//   <Row>
+// </Row>
+// <Row>
+//     </Row>
+//   </Col>
+// </Container>
