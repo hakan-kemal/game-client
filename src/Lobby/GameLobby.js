@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./GameLobby.css";
-import superagent from "superagent";
 import { Link } from "react-router-dom";
-import { url } from "../url";
 import { Col } from "react-bootstrap";
 
 export default class GameLobby extends Component {

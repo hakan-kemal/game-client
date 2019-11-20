@@ -1,5 +1,5 @@
-import { ROOMS } from "../actions";
-import { ROOM } from "../actions";
+//import { ROOMS } from "../actions";
+//import { ROOM } from "../actions";
 
 export default function(state = [], action = {}) {
   switch (action.type) {
