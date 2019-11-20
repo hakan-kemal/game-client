@@ -17,10 +17,9 @@ class ToggleNodejs extends Component {
   }
 
   render() {
-    const opened = this.state.opened;
-
-    if (!opened) {
-      return <div className="square" onClick={this.toggleBox}></div>;
+    const { isOpen } = this.props;
+    if (!isOpen) {
+      return <div onClick={this.props.onClick} className="square"></div>;
     } else {
       return (
         <div>
