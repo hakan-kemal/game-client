@@ -2,6 +2,7 @@ import React from "react";
 import LoginForm from "./LoginForm";
 import { connect } from "react-redux";
 import { login } from "../actions";
+import { Link } from "react-router-dom";
 
 class LoginFormContainer extends React.Component {
   state = { userName: "", password: "" };
@@ -12,12 +13,6 @@ class LoginFormContainer extends React.Component {
     this.props.login(this.state.userName, this.state.password);
   };
 
-  // // *****SIGNUP*****
-  // onSubmit = event => {
-  //   event.preventDefault();
-  //   this.props.signup(this.state.userName, this.state.password);
-  // };
-
   onChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -25,9 +20,17 @@ class LoginFormContainer extends React.Component {
   };
 
   render() {
+    const checkSignUp = this.props.checkSignUp;
     const authToken = this.props.authToken;
-    if (authToken) {
-      return <div> you are logged in! </div>;
+    if (authToken || checkSignUp) {
+      return (
+        <div>
+          <h6>Login successful!</h6>
+          <p>
+            Continue to <Link to={`/room`}>MainLobby</Link>
+          </p>
+        </div>
+      );
     } else {
       return (
         <LoginForm
