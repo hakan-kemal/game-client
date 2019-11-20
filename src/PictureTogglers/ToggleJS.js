@@ -27,7 +27,7 @@ class ToggleJS extends React.Component {
           <img
             alt="js"
             src="https://www.phphulp.nl/img/nieuws/goedkeuring-voor-standaard-javascript-6-454.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

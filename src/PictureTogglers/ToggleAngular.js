@@ -27,7 +27,7 @@ class ToggleAngular extends Component {
           <img
             alt="angular"
             src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/300/square_256/angular2.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

@@ -27,7 +27,7 @@ class ToggleNodejs extends Component {
           <img
             alt="nodejs"
             src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/square_256/nodejslogo.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

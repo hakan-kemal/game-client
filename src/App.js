@@ -8,7 +8,6 @@ import Game from "./Game";
 import "./App.css";
 import { connect } from "react-redux";
 import { url } from "./url";
-=======
 // import GameLobby from "./Lobby/GameLobby";
 
 // import { GET_ROOMS } from "./actions";
@@ -48,7 +47,7 @@ class App extends React.Component {
         <MainLobby rooms={this.props.rooms} />
         {/* <Route path="/room/" component={MainLobby} />
         <Route path="/room/:roomName" component={GameLobby} /> */}
-       <Game />
+        <Game />
       </Fragment>
     );
   }

@@ -27,7 +27,7 @@ class ToggleDocker extends Component {
           <img
             alt="docker"
             src="https://miro.medium.com/max/256/1*hAr6l4rDtb1fWtF1CcW7YQ.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

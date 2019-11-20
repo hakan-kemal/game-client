@@ -27,7 +27,7 @@ class ToggleGithub extends Component {
           <img
             alt="github"
             src="https://my.cyclr.com/api/connectoricon/4998"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

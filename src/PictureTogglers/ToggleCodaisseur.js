@@ -27,7 +27,7 @@ class ToggleCodaisseur extends Component {
           <img
             alt="codaisseur"
             src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/3354/s300/codaisseur-square.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

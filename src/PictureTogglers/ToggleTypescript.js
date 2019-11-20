@@ -27,7 +27,7 @@ class ToggleTypescript extends Component {
           <img
             alt="typescript"
             src="https://raw.githubusercontent.com/microsoft/vscode-typescript-next/master/documentation/logo.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

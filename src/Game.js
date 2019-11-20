@@ -68,10 +68,6 @@ export default class MainLobby extends Component {
           <ToggleRedux />
           <ToggleSlack />
           <ToggleSlack />
-          <ToggleTypescript />
-          <ToggleTypescript />
-          <ToggleVScode />
-          <ToggleVScode />
         </div>
         <br></br>
         <br></br>

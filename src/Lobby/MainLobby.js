@@ -3,6 +3,7 @@ import { url } from "../url";
 import GameLobby from "./GameLobby";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import superagent from "superagent";
 
 export default class MainLobby extends Component {
   state = {

@@ -27,7 +27,7 @@ class ToggleHTML extends Component {
           <img
             alt="html"
             src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );

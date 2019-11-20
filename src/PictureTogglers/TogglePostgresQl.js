@@ -27,7 +27,7 @@ class TogglePostgresQl extends Component {
           <img
             alt="postgresql"
             src="https://api.nuget.org/v3-flatcontainer/npgsql.entityframeworkcore.postgresql/3.0.1/icon"
-            class="codeImage"
+            className="codeImage"
           ></img>
         </div>
       );
