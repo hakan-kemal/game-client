@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Route } from "react-router-dom";
-import LoginFormContainer from "./LoginForm/LoginFormContainer";
+// import LoginFormContainer from "./LoginForm/LoginFormContainer";
 import SignUpFormContainer from "./SignUp/SignUpFormContainer";
 // import UserFormContainer from "./SignUp/UserFormContainer";
 import MainLobby from "./Lobby/MainLobby";
@@ -27,7 +27,7 @@ class App extends React.Component {
     return (
       <Fragment>
         {/* <Route path="/" component={UserFormContainer} exact /> */}
-        <Route path="/" component={LoginFormContainer} exact />
+        {/* <Route path="/" component={LoginFormContainer} exact /> */}
         <Route path="/" component={SignUpFormContainer} exact />
         <Route
           path="/room"
@@ -53,7 +53,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    jwt: state.jwt,
+    jwt: state.login,
     rooms: state.rooms
   };
 }
