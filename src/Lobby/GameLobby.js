@@ -31,10 +31,11 @@ export default class GameLobby extends Component {
     const { login } = this.props;
     console.log("login ?", login);
     console.log("login jwt?", login.jwt);
-    const url = `https://localhost:4000/points`;
+    const pointsUrl = `${url}/points`;
 
+    console.log("url", pointsUrl);
     const response = await superagent
-      .put(url)
+      .put(pointsUrl)
       .send({ username })
       .set({ authorization: `Bearer ${login.jwt}` });
     console.log("response", response);
@@ -72,11 +73,16 @@ export default class GameLobby extends Component {
     const player =
       users && users.length ? (
         users.map(user => (
-          <p key={user.userName}>
-            Player {user.userName} has entered the room. [{user.points}]
-            <button onClick={() => this.onGive(user.userName)}>Points</button>
-            {/* <button onClick={this.onGive}>Points</button> */}
-          </p>
+          <div key={user.userName}>
+            <p>{user.userName} has entered the room.</p>
+            <p>
+              <button onClick={() => this.onGive(user.userName)}>Points</button>
+              {/* <button onClick={this.onGive}>Points</button> */}
+            </p>
+            <p>
+              {user.userName} has {user.points}
+            </p>
+          </div>
         ))
       ) : (
         <p>This room has no users</p>
