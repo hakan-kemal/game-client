@@ -30,10 +30,12 @@ class App extends React.Component {
         {/* <Route path="/" component={LoginFormContainer} exact /> */}
         <Route path="/" component={SignUpFormContainer} exact />
         <Route
+          exact
           path="/room"
           render={props => <MainLobby {...props} rooms={this.props.rooms} />}
         />
         <Route
+          exact
           path="/room/:name"
           render={props => (
             <GameLobby

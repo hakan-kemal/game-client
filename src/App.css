@@ -2,6 +2,46 @@ body {
   background: white;
 }
 
+#gameContainer {
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+}
+
+#dance {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#green {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  color: green;
+}
+
+#black {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+}
+
+#red {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  color: red;
+}
+
+#gameContent {
+  display: inline;
+  float: none;
+  font-weight: bold;
+  font-size: 25px;
+}
+
 #signupCard {
   margin-top: 10%;
   margin-left: 30%;
@@ -79,10 +119,16 @@ body {
 }
 
 .square {
-  background: cadetblue;
+  background: lightblue;
+  border-radius: 5px;
   padding-top: 100%; /* padding trick directly on the grid item */
   box-sizing: border-box;
   position: relative;
+  transition: transform 0.1s;
+}
+
+.square:hover {
+  transform: scale(1.1);
 }
 
 .codeImage {
