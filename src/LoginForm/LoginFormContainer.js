@@ -24,11 +24,15 @@ class LoginFormContainer extends React.Component {
     const authToken = this.props.authToken;
     if (!authToken && checkSignUp) {
       return (
-        <LoginForm
-          onSubmit={this.onSubmit}
-          onChange={this.onChange}
-          values={this.state}
-        />
+        <div>
+          <div>
+            <LoginForm
+              onSubmit={this.onSubmit}
+              onChange={this.onChange}
+              values={this.state}
+            />
+          </div>
+        </div>
       );
     } else {
       return (

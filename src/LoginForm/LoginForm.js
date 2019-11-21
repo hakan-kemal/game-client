@@ -7,22 +7,28 @@ export default function LoginForm(props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Username:</label>
+      {/*<label>Username:</label>*/}
       <input
         type="userName"
+        class="form-control"
         name="userName"
         value={userName}
         onChange={onChange}
         placeholder="Enter username"
       />
-      <label>Password</label>
+      <br></br>
+      <br></br>
+      {/*<label>Password:</label>*/}
       <input
         type="password"
+        class="form-control"
         name="password"
         value={password}
         onChange={onChange}
         placeholder="Enter password"
       />
+      <br></br>
+      <br></br>
       <Button
         variant="outline-primary"
         type="submit"
