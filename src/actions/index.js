@@ -1,6 +1,7 @@
 import superagent from "superagent";
-
-const baseUrl = "https://blooming-fortress-93634.herokuapp.com";
+import { url } from "../url";
+// const baseUrl = "https://blooming-fortress-93634.herokuapp.com";
+const baseUrl = `${url}`;
 
 export const JWT = "JWT";
 export const USER = "USER";
