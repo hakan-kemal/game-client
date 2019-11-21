@@ -39,7 +39,8 @@ class App extends React.Component {
             <GameLobby
               {...props}
               rooms={this.props.rooms}
-              jwt={this.props.jwt}
+              login={this.props.login}
+              user={this.props.user}
             />
           )}
         />
@@ -53,8 +54,10 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    jwt: state.login,
-    rooms: state.rooms
+    login: state.login,
+    rooms: state.rooms,
+    signup: state.signup,
+    user: state.user
   };
 }
 

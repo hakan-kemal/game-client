@@ -8,8 +8,8 @@ import Game from "../Game";
 
 export default class GameLobby extends Component {
   onClick = async () => {
-    const { jwt, match } = this.props;
-    console.log("This is the JWT:", jwt);
+    const { login, match } = this.props;
+    console.log("This is the login:", login);
     console.log("This is the MATCH:", match);
 
     const { name } = match.params;
@@ -19,88 +19,139 @@ export default class GameLobby extends Component {
     console.log("This is the URL:", joinUrl);
 
     const response = await superagent.put(joinUrl).set({
-      authorization: `Bearer ${jwt}`
+      authorization: `Bearer ${login.jwt}`
     });
 
     console.log("response test:", response);
   };
 
+  onGive = async username => {
+    console.log("Give points clicked");
+    console.log("username", username);
+    const { login } = this.props;
+    console.log("login ?", login);
+    console.log("login jwt?", login.jwt);
+    const url = `https://localhost:4000/points`;
+
+    const response = await superagent
+      .put(url)
+      .send({ username })
+      .set({ authorization: `Bearer ${login.jwt}` });
+    console.log("response", response);
+  };
+
+  // give = async username => {
+  //   console.log("username:", username);
+  //   const { login } = this.props;
+  //   // const jwt = 'afakejwt'
+  //   // const url = `https://localhost:4000/points/${username}`;
+  //   const url = `https://localhost:4000/points`;
+
+  //   const response = await superagent
+  //     .put(url)
+  //     .send({ username }) // if you want to use the short version url /points
+  //     .set({
+  //       authorization: `Bearer ${login.jwt}`
+  //     });
+  //   console.log("response", response);
+  // };
+
   render() {
     const { name } = this.props.match.params;
-    console.log("rendered name:", name);
 
     const { rooms } = this.props;
-    console.log("rendered roomS:", rooms);
 
     const room = rooms.find(room => room.name === name);
-    console.log("rendered room:", room);
 
     if (!room) {
       return "This room does not exist";
     }
 
     const { users } = room;
-    console.log("rendered userS:", users);
 
-    const list =
+    const player =
       users && users.length ? (
         users.map(user => (
-          <p key={user.name}>
-            {user.name} [{user.points}]
+          <p key={user.userName}>
+            Player {user.userName} has entered the room. [{user.points}]
+            <button onClick={() => this.onGive(user.userName)}>Points</button>
+            {/* <button onClick={this.onGive}>Points</button> */}
           </p>
         ))
       ) : (
         <p>This room has no users</p>
       );
 
-    console.log("list test:", list);
-    console.log("list test:", list);
+    // const joined = users.some(user => user.userName === user.userName);
+
+    // console.log("joined test", joined);
+
+    // const join = !joined && <button onClick={this.onClick}>Join</button>;
+
+    // console.log("join button", join);
+
+    // const playerName = users.map(player => (
+    //   <h6 key={player.key}>{player.key}</h6>
+    // ));
+
+    // if (board === 1 && users.length === 1) {
+    //   return `Player ${name} has entered the room!`;
+    // }
+
+    console.log("room name:", name);
+    console.log("players array:", player);
+
+    // const playerName = usersArray.map(player => (
+    //   <h6 key={player.key}>{player.key}</h6>
+    // ));
 
     const board = Math.floor(Math.random() * 4) + 1;
 
-    if (board === 1) {
+    if (board === 1 || board === 2 || board === 3 || board === 4) {
       return (
         <div>
           <h1>Game 1</h1>
           <h1>{name}</h1>
           <button onClick={this.onClick}>Join</button>
-          {list}
+          {/* <button onClick={this.onGive}>Points</button> */}
+          {/* <button onClick={() => this.onGive(user.name)}>Points</button> */}
+          {player}
           <Game />
         </div>
       );
-    }
-    if (board === 2) {
-      return (
-        <div>
-          <h1>Game 2</h1>
-          <h1>{name}</h1>
-          <button onClick={this.onClick}>Join</button>
-          {list}
-          <Game />
-        </div>
-      );
-    }
-    if (board === 3) {
-      return (
-        <div>
-          <h1>Game 3</h1>
-          <h1>{name}</h1>
-          <button onClick={this.onClick}>Join</button>
-          {list}
-          <Game />
-        </div>
-      );
-    }
-    if (board === 4) {
-      return (
-        <div>
-          <h1>Game 4</h1>
-          <h1>{name}</h1>
-          <button onClick={this.onClick}>Join</button>
-          {list}
-          <Game />
-        </div>
-      );
+      // }
+      // if (board === 2) {
+      //   return (
+      //     <div>
+      //       <h1>Game 2</h1>
+      //       <h1>{name}</h1>
+      //       <button onClick={this.onClick}>Join</button>
+      //       {player}
+      //       <Game />
+      //     </div>
+      //   );
+      // }
+      // if (board === 3) {
+      //   return (
+      //     <div>
+      //       <h1>Game 3</h1>
+      //       <h1>{name}</h1>
+      //       <button onClick={this.onClick}>Join</button>
+      //       {player}
+      //       <Game />
+      //     </div>
+      //   );
+      // }
+      // if (board === 4) {
+      //   return (
+      //     <div>
+      //       <h1>Game 4</h1>
+      //       <h1>{name}</h1>
+      //       <button onClick={this.onClick}>Join</button>
+      //       {player}
+      //       <Game />
+      //     </div>
+      //   );
     }
   }
 }
