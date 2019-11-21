@@ -20,17 +20,14 @@ export default class MainLobby extends Component {
   };
 
   onSubmit = event => {
-    console.log("SUBMIT BUTTON");
     event.preventDefault();
     const { value } = this.state;
-    console.log({ roomName: value });
-    //const { name } = this.props.match.params;
     const postUrl = `${url}/room`;
     superagent
       .post(postUrl)
       .send({ name: value })
       .then(response => {
-        console.log("response test:", response);
+        return;
       });
   };
 
