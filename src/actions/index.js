@@ -7,10 +7,10 @@ export const NEW_USER = "NEW_USER";
 export const GET_ROOMS = "GET_ROOMS";
 export const ADD_ICON = "ADD_POSTICO";
 
-function jwt(payload) {
+function jwt(jwt, userName, userId) {
   return {
     type: JWT,
-    payload
+    payload: { jwt: jwt, userName: userName, userId: userId }
   };
 }
 
@@ -19,28 +19,42 @@ export const login = (userName, password) => dispatch => {
     .post(`${baseUrl}/login`)
     .send({ userName, password })
     .then(response => {
-      const action = jwt(response.body.jwt);
+      const action = jwt(response.body.jwt, userName, response.body.userId);
 
       dispatch(action);
-    });
+    })
+    .catch(console.error);
 };
 
-function newUser(payload) {
+export function newUser(user) {
   return {
     type: NEW_USER,
-    payload
+    payload: user
   };
 }
 
 export const signup = (userName, password) => dispatch => {
   superagent
     .post(`${baseUrl}/signup`)
+    // .post(`${baseUrl}/user`)
     .send({ userName, password })
     .then(response => {
       const action = newUser(response.body);
 
       dispatch(action);
     });
+};
+
+export function setRoom(name) {
+  superagent
+    .post(`${baseUrl}/room`)
+    .send({ name: name })
+
+    .catch(console.error);
+}
+
+export const dispatchRoomActions = action => dispatch => {
+  dispatch(action);
 };
 
 // function getRooms(payload) {
