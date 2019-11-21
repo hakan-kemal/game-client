@@ -40,28 +40,34 @@ export default class MainLobby extends Component {
     //   return null;
     // } else {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.onChange}
-          />
+      <div id="mainlobbyCard">
+        <div id="mainlobbyContent">
+          <p>Main Lobby</p>
+          <form onSubmit={this.onSubmit}>
+            <input
+              type="text"
+              class="form-control"
+              value={this.state.value}
+              onChange={this.onChange}
+              placeholder="Create a Game"
+            />
 
-          <Button type="button" variant="outline-danger" onClick={this.reset}>
-            Reset
-          </Button>
-          <Button type="submit" variant="outline-primary">
-            Submit
-          </Button>
-        </form>
-        <h2>MainLobby</h2>
-        <p>There are currently {rooms.length} game lobbies available.</p>
-        {rooms.map(room => (
-          <h6 key={room.name}>
-            <Link to={`/room/${room.name}`}>{room.name}</Link>
-          </h6>
-        ))}
+            {/*<Button type="button" variant="outline-danger" onClick={this.reset}>
+              Reset
+    </Button>*/}
+            <br></br>
+            <Button type="submit" variant="outline-primary">
+              Let's play
+            </Button>
+          </form>
+          <br></br>
+          <h5>There are currently {rooms.length} games available:</h5>
+          {rooms.map(room => (
+            <h6 key={room.name}>
+              <Link to={`/room/${room.name}`}>{room.name}</Link>
+            </h6>
+          ))}
+        </div>
       </div>
     );
   }
