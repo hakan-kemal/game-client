@@ -126,6 +126,35 @@ export default class GameLobby extends Component {
     }
 
     const { users } = room;
+    // console.log("room variable:", room);
+    // console.log("room.users varaible:", room.users);
+    // console.log("room.users.length varaible:", room.users.length);
+    const joinedUsers = room.users.length;
+    console.log(joinedUsers);
+
+    // const joinedUsers = rooms.users;
+    // const lengthUsers = rooms.users.length;
+
+    // const joinedRooms = rooms.map(room => {
+    //   return room.users;
+    // });
+
+    // const joinedUsers = joinedRooms.map(user => {
+    //   return user.length;
+    // });
+
+    // console.log("what is rooms:", rooms);
+    // console.log("what is users:", joinedRooms);
+    // console.log("what is users:", joinedUsers);
+
+    // var limitUsers = users;
+
+    // // if (users.length !== 2) {
+    // //   return;
+    // // }
+
+    // console.log("what is users:", limitUsers);
+    // console.log("what is users:", limitUsers.length);
 
     const player =
       users && users.length ? (
@@ -170,16 +199,28 @@ export default class GameLobby extends Component {
           ></img>
         </div>
       );
+    } else if (joinedUsers !== 2) {
+      return (
+        <div className="gameContainer">
+          <h1 className="gameContent">Game: {name}</h1>
+          <br></br>
+          <br></br>
+          <Button variant="outline-primary" onClick={this.onClickJoin}>
+            Join this game!
+          </Button>
+          <p>
+            <br></br>
+          </p>
+          {player}
+        </div>
+      );
     } else {
       return (
         <div>
-          <div id="gameContainer">
-            <h1 id="gameContent">Game: {name}</h1>
+          <div className="gameContainer">
+            <h1 className="gameContent">Game: {name}</h1>
             <br></br>
             <br></br>
-            <Button variant="outline-primary" onClick={this.onClickJoin}>
-              Join this game!
-            </Button>
             <p>
               <br></br>
             </p>
@@ -341,7 +382,6 @@ export default class GameLobby extends Component {
             <br></br>
             <br></br>
           </div>
-          ); }
         </div>
       );
     }
