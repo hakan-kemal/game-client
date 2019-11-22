@@ -31,6 +31,17 @@ export default class MainLobby extends Component {
       });
   };
 
+  onClickJoin = async () => {
+    const { login, match } = this.props;
+    console.log("login?", login);
+    const { name } = match.params;
+    const joinUrl = `${url}/join/${name}`;
+    const response = await superagent.put(joinUrl).set({
+      authorization: `Bearer ${login.jwt}`
+    });
+    console.log(response);
+  };
+
   render() {
     const { rooms } = this.props;
     // if (!rooms) {
@@ -62,6 +73,13 @@ export default class MainLobby extends Component {
           {rooms.map(room => (
             <h6 key={room.name}>
               <Link to={`/room/${room.name}`}>{room.name}</Link>
+
+              {/* <Button
+                style={{ margin: "0 5px 0 5px" }}
+                onClick={this.onClickJoin}
+              >
+                JOIN
+              </Button> */}
             </h6>
           ))}
         </div>
