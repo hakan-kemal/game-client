@@ -31,7 +31,7 @@ export default class GameLobby extends Component {
     won: false
   };
 
-  onClick = name => {
+  onClick = async name => {
     const { clicked, cleared, temp, points } = this.state;
     if (!clicked) {
       this.setState({ clicked: name });
@@ -50,10 +50,13 @@ export default class GameLobby extends Component {
           clicked: "",
           points: points + 5
         });
+        await this.onGive(5);
       } else {
         this.setState({
           temp: [...temp, name]
         });
+
+        await this.onGive(-1);
 
         setTimeout(() => {
           this.setState({
@@ -99,7 +102,7 @@ export default class GameLobby extends Component {
     console.log(response);
   };
 
-  onGive = async username => {
+  onGive = async points => {
     const { login } = this.props;
     console.log("login ?", login);
     console.log("login jwt?", login.jwt);
@@ -108,8 +111,9 @@ export default class GameLobby extends Component {
     console.log("url", pointsUrl);
     const response = await superagent
       .put(pointsUrl)
-      .send({ username })
+      .send({ points })
       .set({ authorization: `Bearer ${login.jwt}` });
+    return response;
   };
 
   render() {
@@ -129,7 +133,9 @@ export default class GameLobby extends Component {
           <div key={user.userName}>
             <p>Player {user.userName} has entered the room</p>
             <p>
+
               <Button onClick={() => this.onGive(user.userName)}>Points</Button>
+
             </p>
             <p>
               {user.userName} has {user.points}
@@ -140,7 +146,17 @@ export default class GameLobby extends Component {
         <p>This room has no users</p>
       );
 
-    const board = Math.floor(Math.random() * 4) + 1;
+    // const user = users.map(user => {
+    //   return user.userName;
+    // });
+
+    // console.log("mapped user -->", user);
+
+    // user={users.map(user => {
+    //   return this.onGive(user.userName);
+    // })}
+
+    // const board = Math.floor(Math.random() * 4) + 1;
 
     //if (board === 1 || board === 2 || board === 3 || board === 4) {
 
@@ -153,6 +169,7 @@ export default class GameLobby extends Component {
           <img
             id="dance"
             src="https://media1.tenor.com/images/66286c21e00a4ef6707abb4bfe19dcb3/tenor.gif?itemid=5043292"
+            alt=""
           ></img>
         </div>
       );
