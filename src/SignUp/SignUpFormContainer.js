@@ -50,9 +50,7 @@ class SignUpFormContainer extends React.Component {
           <p>
             <br></br>
           </p>
-          <p>
-            <Route path="/" component={LoginFormContainer} exact />
-          </p>
+          <Route path="/" component={LoginFormContainer} exact />
         </div>
       );
     } else {
