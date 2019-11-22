@@ -50,13 +50,12 @@ export default class GameLobby extends Component {
           clicked: "",
           points: points + 5
         });
+
         await this.onGive(5);
       } else {
         this.setState({
           temp: [...temp, name]
         });
-
-        await this.onGive(-1);
 
         setTimeout(() => {
           this.setState({
@@ -65,6 +64,8 @@ export default class GameLobby extends Component {
             points: points - 1
           });
         }, 1000);
+
+        await this.onGive(-1);
       }
     }
   };
@@ -87,7 +88,6 @@ export default class GameLobby extends Component {
   }
 
   gameFinished() {
-    console.log(this.state.cleared.length);
     if (this.state.cleared.length === 35) {
     }
   }
@@ -131,14 +131,8 @@ export default class GameLobby extends Component {
       users && users.length ? (
         users.map(user => (
           <div key={user.userName}>
-            <p>Player {user.userName} has entered the room</p>
             <p>
-
-              <Button onClick={() => this.onGive(user.userName)}>Points</Button>
-
-            </p>
-            <p>
-              {user.userName} has {user.points}
+              {user.userName} has {user.points} points
             </p>
           </div>
         ))
@@ -165,6 +159,9 @@ export default class GameLobby extends Component {
     if (this.state.won) {
       return (
         <div>
+          <div id="finalscoreContainer">
+            <div id="finalscoreContent">{player}</div>
+          </div>
           <div id={this.pointsColour()}>Your final score: {points}</div>
           <img
             id="dance"
