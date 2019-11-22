@@ -10,7 +10,7 @@ export default function SignUpForm(props) {
       {/*<label>Username:</label>*/}
       <input
         type="userName"
-        class="form-control"
+        className="form-control"
         name="userName"
         value={userName}
         onChange={onChange}
@@ -21,7 +21,7 @@ export default function SignUpForm(props) {
       {/*<label>Password:</label>*/}
       <input
         type="password"
-        class="form-control"
+        className="form-control"
         name="password"
         value={password}
         onChange={onChange}

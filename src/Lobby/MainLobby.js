@@ -54,7 +54,7 @@ export default class MainLobby extends Component {
           <form onSubmit={this.onSubmit}>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               value={this.state.value}
               onChange={this.onChange}
               placeholder="Create a Game"
