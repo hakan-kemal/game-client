@@ -21,6 +21,24 @@ import ToggleRedux from "../PictureTogglers/ToggleRedux";
 import ToggleSlack from "../PictureTogglers/ToggleSlack";
 import ToggleTypescript from "../PictureTogglers/ToggleTypescript";
 import ToggleVScode from "../PictureTogglers/ToggleVScode";
+import ToggleBaseball from "../SportsTogglers/ToggleBaseball";
+import ToggleBasketball from "../SportsTogglers/ToggleBasketball";
+import ToggleBeachvolley from "../SportsTogglers/ToggleBeachvolley";
+import ToggleBowling from "../SportsTogglers/ToggleBowling";
+import ToggleCricket from "../SportsTogglers/ToggleCricket";
+import ToggleDodgeball from "../SportsTogglers/ToggleDodgeball";
+import ToggleFieldhockey from "../SportsTogglers/ToggleFieldhockey";
+import ToggleFootball from "../SportsTogglers/ToggleFootball";
+import ToggleGolf from "../SportsTogglers/ToggleGolf";
+import ToggleHandball from "../SportsTogglers/ToggleHandball";
+import ToggleIcehockey from "../SportsTogglers/ToggleIcehockey";
+import ToggleLacrosse from "../SportsTogglers/ToggleLacrosse";
+import TogglePool from "../SportsTogglers/TogglePool";
+import ToggleRugby from "../SportsTogglers/ToggleRugby";
+import ToggleSoccer from "../SportsTogglers/ToggleSoccer";
+import ToggleTabletennis from "../SportsTogglers/ToggleTabletennis";
+import ToggleTennis from "../SportsTogglers/ToggleTennis";
+import ToggleVolleyball from "../SportsTogglers/ToggleVolleyball";
 
 export default class GameLobby extends Component {
   state = {
@@ -28,7 +46,15 @@ export default class GameLobby extends Component {
     clicked: "",
     temp: "",
     points: 0,
-    won: false
+    won: false,
+    board: 1
+  };
+
+  componentDidMount = () => {
+    const myBoard = Math.floor(Math.random() * 2) + 1;
+    this.setState({
+      board: myBoard
+    });
   };
 
   onClick = async name => {
@@ -179,10 +205,6 @@ export default class GameLobby extends Component {
     //   return this.onGive(user.userName);
     // })}
 
-    // const board = Math.floor(Math.random() * 4) + 1;
-
-    //if (board === 1 || board === 2 || board === 3 || board === 4) {
-
     const points = this.state.points;
 
     if (this.state.won) {
@@ -199,6 +221,7 @@ export default class GameLobby extends Component {
           ></img>
         </div>
       );
+
     } else if (joinedUsers !== 2) {
       return (
         <div className="gameContainer">
@@ -215,6 +238,8 @@ export default class GameLobby extends Component {
         </div>
       );
     } else {
+      if (this.state.board === 1) {
+
       return (
         <div>
           <div className="gameContainer">
@@ -384,6 +409,180 @@ export default class GameLobby extends Component {
           </div>
         </div>
       );
+    } else {
+      return (
+        <div>
+          <div id="gameContainer">
+            <h1 id="gameContent">Game: {name}</h1>
+            <br></br>
+            <br></br>
+            <Button variant="outline-primary" onClick={this.onClickJoin}>
+              Join this game!
+            </Button>
+            <p>
+              <br></br>
+            </p>
+            {player}
+          </div>
+          <div id="body">
+            <div id={this.pointsColour()}>Points: {points}</div>
+            <div className="square-container">
+              <ToggleBaseball
+                isOpen={this.shouldBeOpen("baseball1")}
+                onClick={() => this.onClick("baseball1")}
+              />
+              <ToggleBasketball
+                isOpen={this.shouldBeOpen("basketball1")}
+                onClick={() => this.onClick("basketball1")}
+              />
+              <ToggleBeachvolley
+                isOpen={this.shouldBeOpen("beachvolley1")}
+                onClick={() => this.onClick("beachvolley1")}
+              />
+              <ToggleBowling
+                isOpen={this.shouldBeOpen("bowling1")}
+                onClick={() => this.onClick("bowling1")}
+              />
+              <ToggleCricket
+                isOpen={this.shouldBeOpen("cricket1")}
+                onClick={() => this.onClick("cricket1")}
+              />
+              <ToggleDodgeball
+                isOpen={this.shouldBeOpen("dodgeball1")}
+                onClick={() => this.onClick("dodgeball1")}
+              />
+              <ToggleFieldhockey
+                isOpen={this.shouldBeOpen("fieldhockey1")}
+                onClick={() => this.onClick("fieldhockey1")}
+              />
+              <ToggleFootball
+                isOpen={this.shouldBeOpen("football1")}
+                onClick={() => this.onClick("football1")}
+              />
+              <ToggleGolf
+                isOpen={this.shouldBeOpen("golf1")}
+                onClick={() => this.onClick("golf1")}
+              />
+              <ToggleHandball
+                isOpen={this.shouldBeOpen("handball1")}
+                onClick={() => this.onClick("handball1")}
+              />
+              <ToggleIcehockey
+                isOpen={this.shouldBeOpen("icehockey1")}
+                onClick={() => this.onClick("icehockey1")}
+              />
+              <ToggleLacrosse
+                isOpen={this.shouldBeOpen("lacrosse1")}
+                onClick={() => this.onClick("lacrosse1")}
+              />
+              <TogglePool
+                isOpen={this.shouldBeOpen("pool1")}
+                onClick={() => this.onClick("pool1")}
+              />
+              <ToggleRugby
+                isOpen={this.shouldBeOpen("rugby1")}
+                onClick={() => this.onClick("rugby1")}
+              />
+              <ToggleSoccer
+                isOpen={this.shouldBeOpen("soccer1")}
+                onClick={() => this.onClick("soccer1")}
+              />
+              <ToggleTabletennis
+                isOpen={this.shouldBeOpen("tabletennis1")}
+                onClick={() => this.onClick("tabletennis1")}
+              />
+              <ToggleTennis
+                isOpen={this.shouldBeOpen("tennisx1")}
+                onClick={() => this.onClick("tennisx1")}
+              />
+              <ToggleVolleyball
+                isOpen={this.shouldBeOpen("volleyball1")}
+                onClick={() => this.onClick("volleyball1")}
+              />
+              <ToggleBaseball
+                isOpen={this.shouldBeOpen("baseball2")}
+                onClick={() => this.onClick("baseball2")}
+              />
+              <ToggleBasketball
+                isOpen={this.shouldBeOpen("basketball2")}
+                onClick={() => this.onClick("basketball2")}
+              />
+              <ToggleBeachvolley
+                isOpen={this.shouldBeOpen("beachvolley2")}
+                onClick={() => this.onClick("beachvolley2")}
+              />
+              <ToggleBowling
+                isOpen={this.shouldBeOpen("bowling2")}
+                onClick={() => this.onClick("bowling2")}
+              />
+              <ToggleCricket
+                isOpen={this.shouldBeOpen("cricket2")}
+                onClick={() => this.onClick("cricket2")}
+              />
+              <ToggleDodgeball
+                isOpen={this.shouldBeOpen("dodgeball2")}
+                onClick={() => this.onClick("dodgeball2")}
+              />
+              <ToggleFieldhockey
+                isOpen={this.shouldBeOpen("fieldhockey2")}
+                onClick={() => this.onClick("fieldhockey2")}
+              />
+              <ToggleFootball
+                isOpen={this.shouldBeOpen("football2")}
+                onClick={() => this.onClick("football2")}
+              />
+              <ToggleGolf
+                isOpen={this.shouldBeOpen("golf2")}
+                onClick={() => this.onClick("golf2")}
+              />
+              <ToggleHandball
+                isOpen={this.shouldBeOpen("handball2")}
+                onClick={() => this.onClick("handball2")}
+              />
+              <ToggleIcehockey
+                isOpen={this.shouldBeOpen("icehockey2")}
+                onClick={() => this.onClick("icehockey2")}
+              />
+              <ToggleLacrosse
+                isOpen={this.shouldBeOpen("lacrosse2")}
+                onClick={() => this.onClick("lacrosse2")}
+              />
+              <TogglePool
+                isOpen={this.shouldBeOpen("pool2")}
+                onClick={() => this.onClick("pool2")}
+              />
+              <ToggleRugby
+                isOpen={this.shouldBeOpen("rugby2")}
+                onClick={() => this.onClick("rugby2")}
+              />
+              <ToggleSoccer
+                isOpen={this.shouldBeOpen("soccer2")}
+                onClick={() => this.onClick("soccer2")}
+              />
+              <ToggleTabletennis
+                isOpen={this.shouldBeOpen("tabletennis2")}
+                onClick={() => this.onClick("tabletennis2")}
+              />
+              <ToggleTennis
+                isOpen={this.shouldBeOpen("tennis2")}
+                onClick={() => this.onClick("tennis2")}
+              />
+              <ToggleVolleyball
+                isOpen={this.shouldBeOpen("volleyball2")}
+                onClick={() => this.onClick("volleyball2")}
+              />
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          </div>
+          ); }
+        </div>
+      );
     }
+}
   }
 }
