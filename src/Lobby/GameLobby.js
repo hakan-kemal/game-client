@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
 import "./GameLobby.css";
 import superagent from "superagent";
 import { url } from "../url";
@@ -130,9 +131,11 @@ export default class GameLobby extends Component {
       users && users.length ? (
         users.map(user => (
           <div key={user.userName}>
-            <p>{user.userName} has entered the room.</p>
+            <p>Player {user.userName} has entered the room</p>
             <p>
-              <button onClick={() => this.onGive(user.userName)}>Points</button>
+
+              <Button onClick={() => this.onGive(user.userName)}>Points</Button>
+
             </p>
             <p>
               {user.userName} has {user.points}
@@ -174,8 +177,15 @@ export default class GameLobby extends Component {
       return (
         <div>
           <div id="gameContainer">
-            <h1 id="gameContent">{name}</h1>
-            <button onClick={this.onClickJoin}>Join</button>
+            <h1 id="gameContent">Game: {name}</h1>
+            <br></br>
+            <br></br>
+            <Button variant="outline-primary" onClick={this.onClickJoin}>
+              Join this game!
+            </Button>
+            <p>
+              <br></br>
+            </p>
             {player}
           </div>
           <div id="body">
