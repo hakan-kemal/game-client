@@ -412,13 +412,10 @@ export default class GameLobby extends Component {
     } else {
       return (
         <div>
-          <div id="gameContainer">
-            <h1 id="gameContent">Game: {name}</h1>
+          <div className="gameContainer">
+            <h1 className="gameContent">Game: {name}</h1>
             <br></br>
             <br></br>
-            <Button variant="outline-primary" onClick={this.onClickJoin}>
-              Join this game!
-            </Button>
             <p>
               <br></br>
             </p>
