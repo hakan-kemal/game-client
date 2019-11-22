@@ -131,14 +131,8 @@ export default class GameLobby extends Component {
       users && users.length ? (
         users.map(user => (
           <div key={user.userName}>
-            <p>Player {user.userName} has entered the room</p>
             <p>
-
-              <Button onClick={() => this.onGive(user.userName)}>Points</Button>
-
-            </p>
-            <p>
-              {user.userName} has {user.points}
+              {user.userName} has {user.points} points
             </p>
           </div>
         ))
@@ -165,7 +159,10 @@ export default class GameLobby extends Component {
     if (this.state.won) {
       return (
         <div>
-          <div id={this.pointsColour()}>Your final score: {points}</div>
+          <div id={this.pointsColour()}>
+            <h1>Your final score: {points}</h1>
+            <h6>{player}</h6>
+          </div>
           <img
             id="dance"
             src="https://media1.tenor.com/images/66286c21e00a4ef6707abb4bfe19dcb3/tenor.gif?itemid=5043292"
