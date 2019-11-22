@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { dodgeball } from "../sports.images";
 
 class ToggleVScode extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleVScode extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="vscode"
-            src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
-            className="codeImage"
-          ></img>
+          <img alt="vscode" src={dodgeball} className="codeImage"></img>
         </div>
       );
     }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { bowling } from "../sports.images";
 
 class ToggleHeroku extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleHeroku extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="heroku"
-            src="https://ivangabriele.gallerycdn.vsassets.io/extensions/ivangabriele/vscode-heroku/1.4.3/1563906575407/Microsoft.VisualStudio.Services.Icons.Default"
-            className="codeImage"
-          ></img>
+          <img alt="heroku" src={bowling} className="codeImage"></img>
         </div>
       );
     }

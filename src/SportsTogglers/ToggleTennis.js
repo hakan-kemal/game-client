@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { tennis } from "../sports.images";
 
 class ToggleGraphQL extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleGraphQL extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="graphql"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/128px-GraphQL_Logo.svg.png"
-            className="codeImage"
-          ></img>
+          <img alt="graphql" src={tennis} className="codeImage"></img>
         </div>
       );
     }

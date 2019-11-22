@@ -1,23 +1,5 @@
 import React, { Component } from "react";
-import { soccer } from "./sports.images";
-import { football } from "./sports.images";
-import { baseball } from "./sports.images";
-import { basketball } from "./sports.images";
-import { volleyball } from "./sports.images";
-import { golf } from "./sports.images";
-import { tennis } from "./sports.images";
-import { bowling } from "./sports.images";
-import { beachvolley } from "./sports.images";
-import { cricket } from "./sports.images";
-import { pool } from "./sports.images";
-import { icehockey } from "./sports.images";
-import { handball } from "./sports.images";
-import { fieldhockey } from "./sports.images";
-import { lacrosse } from "./sports.images";
-import { tabletennis } from "./sports.images";
-import { rugby } from "./sports.images";
-import { dodgeball } from "./sports.images";
-import { waterpolo } from "./sports.images";
+import { baseball } from "../sports.images";
 
 class ToggleBaseball extends Component {
   constructor(props) {

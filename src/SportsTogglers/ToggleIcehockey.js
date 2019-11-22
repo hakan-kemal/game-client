@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { icehockey } from "../sports.images";
 
 class TogglePostgresQl extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class TogglePostgresQl extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="postgresql"
-            src="https://api.nuget.org/v3-flatcontainer/npgsql.entityframeworkcore.postgresql/3.0.1/icon"
-            className="codeImage"
-          ></img>
+          <img alt="postgresql" src={icehockey} className="codeImage"></img>
         </div>
       );
     }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { volleyball } from "../sports.images";
 
 class ToggleDocker extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleDocker extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="docker"
-            src="https://miro.medium.com/max/256/1*hAr6l4rDtb1fWtF1CcW7YQ.png"
-            className="codeImage"
-          ></img>
+          <img alt="docker" src={volleyball} className="codeImage"></img>
         </div>
       );
     }

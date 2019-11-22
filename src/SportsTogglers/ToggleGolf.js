@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { golf } from "../sports.images";
 
 class ToggleGithub extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleGithub extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="github"
-            src="https://my.cyclr.com/api/connectoricon/4998"
-            className="codeImage"
-          ></img>
+          <img alt="github" src={golf} className="codeImage"></img>
         </div>
       );
     }

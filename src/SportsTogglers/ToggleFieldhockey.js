@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { fieldhockey } from "../sports.images";
 
 class TogglePostico extends Component {
   // constructor(props) {
@@ -23,11 +24,7 @@ class TogglePostico extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="postico"
-            src="https://static.macupdate.com/products/53411/l/postico-logo.png?v=1570548229"
-            className="codeImage"
-          ></img>
+          <img alt="postico" src={fieldhockey} className="codeImage"></img>
         </div>
       );
     }

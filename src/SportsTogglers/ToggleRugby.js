@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { rugby } from "../sports.images";
 
 class ToggleTypescript extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleTypescript extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="typescript"
-            src="https://raw.githubusercontent.com/microsoft/vscode-typescript-next/master/documentation/logo.png"
-            className="codeImage"
-          ></img>
+          <img alt="typescript" src={rugby} className="codeImage"></img>
         </div>
       );
     }

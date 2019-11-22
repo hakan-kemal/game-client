@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { basketball } from "../sports.images";
 
 class ToggleCSS extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleCSS extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="css"
-            src="http://www.freesite.wakeupict.com/wp-content/uploads/css3-256.png"
-            className="codeImage"
-          ></img>
+          <img alt="css" src={basketball} className="codeImage"></img>
         </div>
       );
     }

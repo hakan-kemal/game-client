@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { pool } from "../sports.images";
 
 class ToggleNodejs extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleNodejs extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="nodejs"
-            src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/square_256/nodejslogo.png"
-            className="codeImage"
-          ></img>
+          <img alt="nodejs" src={pool} className="codeImage"></img>
         </div>
       );
     }

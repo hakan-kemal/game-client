@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { lacrosse } from "../sports.images";
 
 class ToggleRedux extends Component {
   constructor(props) {
@@ -23,11 +24,7 @@ class ToggleRedux extends Component {
     } else {
       return (
         <div>
-          <img
-            alt="redux"
-            src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/386/square_256/redux.png"
-            className="codeImage"
-          ></img>
+          <img alt="redux" src={lacrosse} className="codeImage"></img>
         </div>
       );
     }

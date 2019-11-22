@@ -65,7 +65,7 @@ export default class MainLobby extends Component {
     </Button>*/}
             <br></br>
             <Button type="submit" variant="outline-primary">
-              Let's play
+              Create game
             </Button>
           </form>
           <br></br>
